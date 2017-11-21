@@ -74,7 +74,7 @@
       <module fileurl="file://$PROJECT_DIR$/dataManagment.iml" filepath="$PROJECT_DIR$/dataManagment.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="PropertiesComponent">
@@ -88,6 +88,15 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="jsch-0.1.54">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/jar/jsch-0.1.54.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="masterDetails">
     <states>

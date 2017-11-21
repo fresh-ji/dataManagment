@@ -1,0 +1,190 @@
+
+
+    //写README.md，失败
+    //File Info = new File(masterPath+"/a.txt");
+    //FileWriter fw = new FileWriter(Info);
+    //fw.write(projectName);
+    //fw.flush();
+    //fw.close();
+    //masterGit.add().addFilepattern("/a.txt").call();
+
+    /*
+    int addSubModule(Git destGit, Git srcGit) throws Exception {
+        String uri = srcGit.getRepository().getDirectory().getCanonicalPath();
+        System.out.println(uri);
+        SubmoduleAddCommand add = destGit.submoduleAdd();
+        add.setURI(uri);
+        add.setPath("modules/library");
+        Repository repo = add.call();
+        repo.close();
+
+        File workDir = destGit.getRepository().getWorkTree();
+        File readme = new File(workDir, "modules/library/readme.txt");
+        File gitmodules = new File(workDir, ".gitmudules");
+        assert(readme.isFile());
+        assert(gitmodules.isFile());
+
+        return 1;
+    }
+    */
+}
+
+
+        /*
+        File Info = new File(slavePath+"/a.txt");
+        FileWriter fw = new FileWriter(Info);
+        fw.write("hello, this is slave");
+        fw.flush();
+        fw.close();
+        slaveGit.add().addFilepattern(".").call();
+        slaveGit.commit().setMessage("add txt").call();
+        slaveGit.push().call();
+
+        Repository repository = masterGit.getRepository();
+        Ref head = repository.findRef("master");
+        RevWalk walk = new RevWalk(repository);
+        RevCommit revCommit = walk.parseCommit(head.getObjectId());
+        RevTree tree= revCommit.getTree();
+
+        CanonicalTreeParser TreeParser = new CanonicalTreeParser();
+        ObjectReader Reader = repository.newObjectReader();
+        TreeParser.reset(Reader, tree.getId());
+        AbstractTreeIterator newTree = TreeParser;
+        System.out.println(newTree.getEntryObjectId().getFirstByte());
+
+
+
+
+        //byte[] perContent = masterGit.getRepository().open(treeObj).getBytes();
+        //System.out.println(perContent);
+
+
+        //List<DiffEntry> diffEntries = masterGit.diff().call();
+        //System.out.println(diffEntries.size());
+        //for(DiffEntry df : diffEntries)
+        //    System.out.println(df.toString());
+
+
+
+        //List<Ref> refs = masterGit.branchList().call();
+        //for(Ref ref : refs)
+        //    System.out.println(ref.toString());
+
+        //更新map
+        //projectMap.put(git.hashCode(), repoPath);
+        //System.out.println("project " + git.hashCode() + " established!!");
+        //写README.md
+        //File projectInfo = new File(repoPath+"/README.md");
+        //FileWriter fw = new FileWriter(projectInfo);
+        //fw.write(projectName);
+        //fw.flush();
+        //fw.close();
+        //Git git2 = Git.open(projectFile);
+        //git2.add().addFilepattern("README.md").call();
+        //git2.commit().setMessage("Create README.md").call();
+        //git2.close();
+        //返回
+        */
+/*
+
+
+
+
+        //添加,git add
+        git.add().addFilepattern(".+").call();
+        //提交,git commit
+        git.commit().setCommitter("jihang", "jihang@me.com").setMessage("Try").call();
+        //查看log
+        for(RevCommit revCommit : git.log().call()) {
+        System.out.println(revCommit);
+        System.out.println(revCommit.getFullMessage());
+        System.out.println(revCommit.getCommitterIdent().getName()+" "+revCommit.getCommitterIdent().getEmailAddress());
+//建info
+        //File projectInfo = new File(rootPath+"/info.txt");
+        //FileWriter fw = new FileWriter(projectInfo);
+        //fw.write("hello world!!\nThis is project "+projectIndex);
+        //fw.flush();
+        //fw.close();
+        //添加info
+        //Git git = Git.open(projectFile);
+        //git.add().addFilepattern("info.txt").call();
+        //RevCommit commit = git.commit().setMessage("Create Project and Info").call();
+        //git.close();
+        }
+        */
+//
+  //  HashMap<Integer, String> projectMap = new HashMap();
+   // HashMap<Integer, String> taskMap = new HashMap();
+    //HashMap<Integer, String> subtaskMap = new HashMap();
+
+
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.errors.RepositoryNotFoundException;
+
+import java.io.File;
+import java.io.FileWriter;
+
+/**
+ * Created by jihang on 2017/11/20.
+ */
+
+public class handleFileSystem {
+
+    String repositoryRoot = "mySpace/repository/";
+    String projectRoot = "mySpace/project/";
+
+    int addProject(String projectName) throws Throwable {
+
+    }
+
+    int addTask(String projectPath, String taskName) throws Throwable {
+        //master分支
+        String masterPath = projectPath + taskName;
+        File masterFile = new File(masterPath);
+        //建文件夹
+        if (masterFile.exists()) {
+            System.out.println("task already exists on master side!!");
+            return 0;
+        }
+        //建库
+        Git masterGit = Git.init().setDirectory(masterFile).call();
+        //提交第一个commit
+        masterGit.commit().setMessage("Hi, this is " + taskName + "!").call();
+        return masterGit.hashCode();
+    }
+
+    int addSubTask(String taskPath, String subTaskName) throws Throwable {
+        try {
+            Git taskGit = Git.open(new File(taskPath));
+            taskGit.branchCreate().
+            File masterFile = new File(taskPath + subTaskName);
+            masterFile.mkdir();
+            return masterFile.hashCode();
+        } catch (RepositoryNotFoundException e) {
+            System.out.println("can not open taskPath");
+            return 0;
+        }
+    }
+
+    int addData(String taskPath, String subTaskName, ata data) throws Throwable {
+        try {
+            Git taskGit = Git.open(new File(taskPath));
+            File masterFile;
+            if(subTaskName == "")
+                masterFile = new File(taskPath);
+            else
+                masterFile = new File(taskPath + subTaskName);
+            File dataFile = new File(masterFile + "/" + data.name);
+            FileWriter fw = new FileWriter(dataFile);
+            fw.write(data.content.toString());
+            fw.flush();
+            fw.close();
+            taskGit.add().addFilepattern(".").call();
+            taskGit.commit().setMessage("add " + data.name).call();
+            return dataFile.hashCode();
+        } catch (RepositoryNotFoundException e) {
+            System.out.println("can not open taskPath");
+            return 0;
+        }
+    }
+}
