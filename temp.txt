@@ -188,3 +188,36 @@ public class handleFileSystem {
         }
     }
 }
+
+
+        //DirCache dirCache = git.getRepository().readDirCache();
+        //int now = 0;
+        //while(now < dirCache.getEntryCount()) {
+        //    int next = dirCache.nextEntry(now);
+        //    for(int i=0;i<next-now;++i) {
+        //        DirCacheEntry entry = dirCache.getEntry(now + i);
+        //        //RevObject rb = new RevBlob(entry.getObjectId());
+        //    }
+
+        //    now = next;
+        //}
+
+
+
+            //RevTree tree = walk.parseTree(commit.getTree().getId());
+            //loader = git.getRepository().open(tree.getId());
+            //loader.copyTo(System.out);
+
+            //CanonicalTreeParser TreeParser = new CanonicalTreeParser();
+            //ObjectReader Reader = git.getRepository().newObjectReader();
+            //TreeParser.reset(Reader, commit.getTree().getId());
+            //AbstractTreeIterator newTree = TreeParser;
+            //List<DiffEntry> diffs = git.diff().setNewTree(newTree).call();
+            //if(diffs.size() > 0) {
+            //    for(DiffEntry df : diffs) {
+            //        //DiffFormatter formatter = new DiffFormatter(System.out);
+            //        //formatter.setRepository(git.getRepository());
+            //        //formatter.format(df);
+            //        System.out.println(df);
+            //    }
+            //}
