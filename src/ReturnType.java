@@ -1,3 +1,5 @@
+import org.eclipse.jgit.revwalk.RevCommit;
+
 import java.util.Objects;
 
 /**
@@ -12,8 +14,26 @@ public class ReturnType {
         String branchName;
     }
     forkInfo forkinfo;
-    ReturnType(String str) {
-        if(Objects.equals(str, "forkInfo"))
-            forkinfo = new forkInfo();
+
+    //作为getCommitChannel返回时使用
+    class commitInfo {
+        RevCommit commit;
+        String[] differs;
     }
+    commitInfo commitinfo;
+    int order() {
+        return commitinfo.commit.getCommitTime();
+    }
+
+    ReturnType(String str) {
+        if(Objects.equals(str, "forkInfo")) {
+            forkinfo = new forkInfo();
+        }
+        if(Objects.equals(str, "commitInfo")) {
+            commitinfo = new commitInfo();
+        }
+    }
+
+
+
 }

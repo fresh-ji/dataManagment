@@ -1,4 +1,5 @@
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.lib.Ref;
 
 import java.io.File;
 
@@ -49,12 +50,16 @@ public class Task extends Deck {
         return 0;
     }
 
-    //先合并master再向root提交，但root仍未合并，cargoPath指的是master库目录
-    //root合并使用mergeCargo
-    void mergeTask(String taskPath) throws Throwable {
-        super.mergeCargo(taskPath);
-        Git masterGit = Git.open(new File(taskPath));
-        //masterGit.checkout().setName("master").call();//在mergeCargo里已切换
-        masterGit.push().call();
+    void pushTask(String taskPath, String rootPath) throws Throwable {
+        Git git = Git.open(new File(taskPath));
+        git.checkout().setName("master").call();
+        git.add().addFilepattern(".").call();
+        git.commit().setMessage(git.toString() + " commit!!");
+        git.push().call();
+
+        Git rootgit = Git.open(new File(rootPath));
+        rootgit.checkout().setName("master").call();
+        Ref ref = rootgit.getRepository().findRef("master");
+        rootgit.merge().include(ref).call();
     }
 }

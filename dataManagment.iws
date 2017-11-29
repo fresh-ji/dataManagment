@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7db1a591-2f84-48b5-a2f4-268726f7ce3b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RequProcess.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/dataManagment/ReqProcess.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ReqProcess.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dataManagment/Deck.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/Deck.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dataManagment/Project.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/Project.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dataManagment/RequProcess.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/RequProcess.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dataManagment/ReturnType$forkInfo.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/ReturnType$forkInfo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dataManagment/ReturnType.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/ReturnType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dataManagment/Task.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/Task.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dataManagment/test.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/test.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataManagment.iws" afterPath="$PROJECT_DIR$/dataManagment.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Deck.java" afterPath="$PROJECT_DIR$/src/Deck.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Project.java" afterPath="$PROJECT_DIR$/src/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RequProcess.java" afterPath="$PROJECT_DIR$/src/RequProcess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ReturnType.java" afterPath="$PROJECT_DIR$/src/ReturnType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task.java" afterPath="$PROJECT_DIR$/src/Task.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testMain.java" afterPath="$PROJECT_DIR$/src/testMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/temp.txt" afterPath="$PROJECT_DIR$/temp.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,13 +26,16 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="dataManagment" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testMain.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/testMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1474">
-              <caret line="67" column="16" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+            <state relative-caret-position="531">
+              <caret line="94" column="53" lean-forward="true" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,8 +46,8 @@
       <file leaf-file-name="RequProcess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RequProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="484">
+              <caret line="139" column="1" lean-forward="false" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
               <folding>
                 <element signature="method#addProject#0;class#RequProcess#0" expanded="false" />
                 <element signature="method#addTask#0;class#RequProcess#0" expanded="false" />
@@ -56,8 +55,13 @@
                 <element signature="method#deleteTask#0;class#RequProcess#0" expanded="false" />
                 <element signature="method#forkProject#0;class#RequProcess#0" expanded="false" />
                 <element signature="method#forkTask#0;class#RequProcess#0" expanded="false" />
-                <element signature="method#mergeProject#0;class#RequProcess#0" expanded="false" />
-                <element signature="method#watchTask#0;class#RequProcess#0" expanded="false" />
+                <element signature="method#getProjectCommitChannel#0;class#RequProcess#0" expanded="false" />
+                <element signature="method#getTaskCommitChannel#0;class#RequProcess#0" expanded="false" />
+                <element signature="method#lookProjectFile#0;class#RequProcess#0" expanded="false" />
+                <element signature="method#lookTaskFile#0;class#RequProcess#0" expanded="false" />
+                <element signature="method#processProjectCommit#0;class#RequProcess#0" expanded="false" />
+                <element signature="method#processTaskCommit#0;class#RequProcess#0" expanded="false" />
+                <element signature="method#pushTask#0;class#RequProcess#0" expanded="false" />
                 <element signature="method#cargoInfo#0;class#RequProcess#0" expanded="false" />
                 <element signature="method#findNode#0;class#RequProcess#0" expanded="false" />
               </folding>
@@ -65,14 +69,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Deck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="128">
+              <caret line="68" column="40" lean-forward="false" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#forkCargo#0;class#Deck#0" expanded="false" />
+                <element signature="method#lookFile#0;class#Deck#0" expanded="false" />
+                <element signature="method#mergeCargo#0;class#Deck#0" expanded="false" />
+                <element signature="method#statusCargo#0;class#Deck#0" expanded="false" />
+                <element signature="method#prepareTreeParser#0;class#Deck#0" expanded="false" />
+                <element signature="method#prepareCommit#0;class#Deck#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Task.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <folding>
+                <element signature="method#addCargo#0;class#Task#0" expanded="false" />
+                <element signature="method#deleteCargo#0;class#Task#0" expanded="false" />
+                <element signature="method#pushTask#0;class#Task#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,6 +117,7 @@
       <find>raw</find>
       <find>try</find>
       <find>walk</find>
+      <find>System</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,17 +138,17 @@
         <option value="$PROJECT_DIR$/src/reqProcess.java" />
         <option value="$PROJECT_DIR$/src/deck.java" />
         <option value="$PROJECT_DIR$/src/TreeNode.java" />
-        <option value="$PROJECT_DIR$/src/ReturnType.java" />
         <option value="$PROJECT_DIR$/src/ReqProcess.java" />
-        <option value="$PROJECT_DIR$/src/Task.java" />
         <option value="$PROJECT_DIR$/src/Project.java" />
         <option value="$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/merge/Merger.class" />
         <option value="$PROJECT_DIR$/src/myMerger.java" />
         <option value="$PROJECT_DIR$/src/s.java" />
         <option value="$PROJECT_DIR$/temp.txt" />
-        <option value="$PROJECT_DIR$/src/testMain.java" />
-        <option value="$PROJECT_DIR$/src/RequProcess.java" />
+        <option value="$PROJECT_DIR$/src/ReturnType.java" />
         <option value="$PROJECT_DIR$/src/Deck.java" />
+        <option value="$PROJECT_DIR$/src/Task.java" />
+        <option value="$PROJECT_DIR$/src/RequProcess.java" />
+        <option value="$PROJECT_DIR$/src/testMain.java" />
       </list>
     </option>
   </component>
@@ -135,10 +159,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="408" />
-    <option name="y" value="4" />
-    <option name="width" value="924" />
-    <option name="height" value="912" />
+    <option name="x" value="431" />
+    <option name="width" value="1249" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -158,9 +181,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -178,6 +198,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -598,6 +621,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7db1a591-2f84-48b5-a2f4-268726f7ce3b" name="Default" comment="" />
@@ -624,35 +650,40 @@
       <workItem from="1511311081650" duration="27837000" />
       <workItem from="1511397223800" duration="23933000" />
       <workItem from="1511484416750" duration="880000" />
+      <workItem from="1511662185405" duration="592000" />
+      <workItem from="1511743526544" duration="20511000" />
+      <workItem from="1511830198177" duration="25317000" />
+      <workItem from="1511915670889" duration="8634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199928000" />
+    <option name="totallyTimeSpent" value="254982000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779622" sideWeight="0.75" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26961327" sideWeight="0.27640265" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29457363" sideWeight="0.72359735" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.72359735" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.129375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2786759" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4097453" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994062" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8803987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -660,7 +691,6 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779622" sideWeight="0.75" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -674,37 +704,19 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="39" />
+      <option name="time" value="41" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((CanonicalTreeParser)treeWalk.trees[0]).nextPtr" custom="org.eclipse.jgit.treewalk.CanonicalTreeParser" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dmGit.java" />
-    <entry file="file://$PROJECT_DIR$/src/testMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="40" lean-forward="false" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dmGit.java" />
-    <entry file="file://$PROJECT_DIR$/src/testMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dmGit.java" />
     <entry file="file://$PROJECT_DIR$/src/testMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -846,13 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/diff/DiffEntry.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/treewalk/TreeWalk.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -871,47 +876,7 @@
     <entry file="file://$PROJECT_DIR$/src/handleFileSystem.java" />
     <entry file="file://$PROJECT_DIR$/src/taskType.java" />
     <entry file="file://$PROJECT_DIR$/src/Data.java" />
-    <entry file="file://$PROJECT_DIR$/src/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ReturnType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ReqProcess.java" />
-    <entry file="file://$PROJECT_DIR$/src/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#addCargo#0;class#Project#0" expanded="false" />
-            <element signature="method#deleteCargo#0;class#Project#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding>
-            <element signature="method#addCargo#0;class#Task#0" expanded="false" />
-            <element signature="method#deleteCargo#0;class#Task#0" expanded="false" />
-            <element signature="method#mergeTask#0;class#Task#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/annotations/Nullable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -956,20 +921,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/testMain.java">
+    <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/diff/DiffEntry.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1474">
-          <caret line="67" column="16" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+        <state relative-caret-position="-4259">
+          <caret line="28" column="35" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/function/ToIntFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-490">
+          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="40" column="17" lean-forward="false" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ReturnType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="32" column="42" lean-forward="false" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#422#423#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="method#addCargo#0;class#Project#0" expanded="false" />
+            <element signature="method#deleteCargo#0;class#Project#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="17" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/lib/ObjectLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="68" column="40" lean-forward="false" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#forkCargo#0;class#Deck#0" expanded="false" />
+            <element signature="method#lookFile#0;class#Deck#0" expanded="false" />
+            <element signature="method#mergeCargo#0;class#Deck#0" expanded="false" />
+            <element signature="method#statusCargo#0;class#Deck#0" expanded="false" />
+            <element signature="method#prepareTreeParser#0;class#Deck#0" expanded="false" />
+            <element signature="method#prepareCommit#0;class#Deck#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="50" column="5" lean-forward="false" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding>
+            <element signature="method#addCargo#0;class#Task#0" expanded="false" />
+            <element signature="method#deleteCargo#0;class#Task#0" expanded="false" />
+            <element signature="method#pushTask#0;class#Task#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RequProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="484">
+          <caret line="139" column="1" lean-forward="false" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
           <folding>
             <element signature="method#addProject#0;class#RequProcess#0" expanded="false" />
             <element signature="method#addTask#0;class#RequProcess#0" expanded="false" />
@@ -977,21 +1027,25 @@
             <element signature="method#deleteTask#0;class#RequProcess#0" expanded="false" />
             <element signature="method#forkProject#0;class#RequProcess#0" expanded="false" />
             <element signature="method#forkTask#0;class#RequProcess#0" expanded="false" />
-            <element signature="method#mergeProject#0;class#RequProcess#0" expanded="false" />
-            <element signature="method#watchTask#0;class#RequProcess#0" expanded="false" />
+            <element signature="method#getProjectCommitChannel#0;class#RequProcess#0" expanded="false" />
+            <element signature="method#getTaskCommitChannel#0;class#RequProcess#0" expanded="false" />
+            <element signature="method#lookProjectFile#0;class#RequProcess#0" expanded="false" />
+            <element signature="method#lookTaskFile#0;class#RequProcess#0" expanded="false" />
+            <element signature="method#processProjectCommit#0;class#RequProcess#0" expanded="false" />
+            <element signature="method#processTaskCommit#0;class#RequProcess#0" expanded="false" />
+            <element signature="method#pushTask#0;class#RequProcess#0" expanded="false" />
             <element signature="method#cargoInfo#0;class#RequProcess#0" expanded="false" />
             <element signature="method#findNode#0;class#RequProcess#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Deck.java">
+    <entry file="file://$PROJECT_DIR$/src/testMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="531">
+          <caret line="94" column="53" lean-forward="true" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#forkCargo#0;class#Deck#0" expanded="false" />
           </folding>
         </state>
       </provider>

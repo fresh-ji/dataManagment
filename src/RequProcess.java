@@ -1,3 +1,4 @@
+import java.util.List;
 
 /**
  * Created by jihang on 2017/11/22.
@@ -6,7 +7,10 @@
 public class RequProcess {
 
     //工程树根
-    TreeNode root = new TreeNode("root");
+    private TreeNode root = new TreeNode("root");
+
+    //commit处理时间进度
+    private int timeProgress = 0;
 
     //增接口
     int addProject(String projectName) throws Throwable {
@@ -66,31 +70,53 @@ public class RequProcess {
         return fi;
     }
 
-    //merge接口
-    void mergeProject(int projectHash) throws Throwable {
+    //列举commit接口，返回的太复杂，可以精简
+    List<ReturnType> getProjectCommitChannel(int projectHash) throws Throwable {
         Project pj = new Project();
         TreeNode node = findNode(projectHash);
-        pj.mergeCargo(node.repoPath);
+        return pj.getCommitChannel(node.repoPath, timeProgress);
     }
 
-    void mergeTask(int taskHash) throws Throwable {
+    List<ReturnType> getTaskCommitChannel(int taskHash) throws Throwable {
         Task ta = new Task();
         TreeNode node = findNode(taskHash);
-        ta.revisionInfo(node.repoPath);//master合并并提交root
-        //ta.mergeCargo(node.parent.repoPath + "/" + node.name);//root合并
+        return ta.getCommitChannel(node.repoPath, timeProgress);
     }
 
-    //查commit接口
-    void watchTask(int taskHash) throws Throwable {
+    //查看commit中file接口
+    String lookProjectFile(String fileName, int commitHash, int projectHash) throws Throwable {
+        Project pj = new Project();
+        TreeNode node = findNode(projectHash);
+        return pj.lookFile(fileName, commitHash, node.repoPath);
+    }
+
+    String lookTaskFile(String fileName, int commitHash, int taskHash) throws Throwable {
         Task ta = new Task();
         TreeNode node = findNode(taskHash);
-        System.out.println("Repository on master side : ");
-        ta.watchCargo(node.repoPath);
-        System.out.println("Repository on root side : ");
-        ta.watchCargo(node.parent.repoPath + "/" + node.name);
+        return ta.lookFile(fileName, commitHash, node.repoPath);
     }
 
-    //工程树处理接口
+    //处理commit接口
+    void processProjectCommit(int commitHash, int projectHash) throws Throwable {
+        Project pj = new Project();
+        TreeNode node = findNode(projectHash);
+        timeProgress = pj.mergeCargo(commitHash, node.repoPath);
+    }
+
+    void processTaskCommit(int commitHash, int taskHash) throws Throwable {
+        Task ta = new Task();
+        TreeNode node = findNode(taskHash);
+        timeProgress = ta.mergeCargo(commitHash, node.repoPath);
+    }
+
+    //只有Task才有的推送，和上一个都是merge过程，返回值应该是boolean
+    void pushTask(int taskHash) throws Throwable {
+        Task ta = new Task();
+        TreeNode node = findNode(taskHash);
+        ta.pushTask(node.repoPath, node.parent.repoPath + "/" + node.name);
+    }
+
+    //展示工程树接口
     void cargoInfo() {
         System.out.println("Cargo structure is : ");
         for(TreeNode tn : root.childlist) {
@@ -100,7 +126,7 @@ public class RequProcess {
         }
     }
 
-    TreeNode findNode(int nodeHash) {
+    private TreeNode findNode(int nodeHash) {
         for(TreeNode tn : root.childlist) {
             if(tn.hashCode == nodeHash)
                 return tn;

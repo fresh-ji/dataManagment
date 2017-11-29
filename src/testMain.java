@@ -1,8 +1,9 @@
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.revwalk.RevCommit;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by jihang on 2017/11/9.
@@ -53,32 +54,33 @@ class test {
         //        .call();
 
         //提交过程
-        //1号
+        //1号，两个文件提交一次
         File f1 = new File(user1Dir + "a.txt");
         FileWriter fw1 = new FileWriter(f1);
-        fw1.write("aaaaa");
+        fw1.write("aaaaad");
         fw1.flush();
         f1 = new File(user1Dir + "aa.txt");
         fw1 = new FileWriter(f1);
-        fw1.write("aaaaa");
+        fw1.write("aaaaac");
         fw1.flush();
         fw1.close();
         git1.add().addFilepattern(".").call();
         git1.commit().setCommitter(user1Ident, "email")
                 .setMessage("user1 processed").call();
         git1.push().call();
-        //2号
-        File f2 = new File(user2Dir + "a.txt");
+
+        //2号，2个文件提交两次
+        File f2 = new File(user2Dir + "b.txt");
         FileWriter fw2 = new FileWriter(f2);
-        fw2.write("bbbbb");
+        fw2.write("bbbbbd");
         fw2.flush();
         git2.add().addFilepattern(".").call();
         git2.commit().setCommitter(user2Ident, "email")
                 .setMessage("user2 processed first time").call();
         git2.push().call();
-        f2 = new File(user2Dir + "b.txt");
+        f2 = new File(user2Dir + "bb.txt");
         fw2 = new FileWriter(f2);
-        fw2.write("bbbbb");
+        fw2.write("bbbbbc");
         fw2.flush();
         fw2.close();
         git2.add().addFilepattern(".").call();
@@ -86,8 +88,30 @@ class test {
                 .setMessage("user2 processed second time").call();
         git2.push().call();
 
-        //合并过程
-        rp.mergeTask(taskHash);
-        //rp.watchTask(taskHash);//打印主分支现状
+        //获取commit通道,相当于概览
+        List<ReturnType> channel = rp.getTaskCommitChannel(taskHash);
+        /*
+        for (ReturnType rt : channel) {
+            ReturnType.commitInfo ci = rt.commitinfo;
+            System.out.println("用户：" + ci.commit.getCommitterIdent().getName());
+            System.out.println("名称：" + ci.commit.getFullMessage());
+            System.out.println("时间：" + ci.commit.getCommitTime());
+            System.out.println("哈希：" + ci.commit.hashCode());
+            System.out.println("内容数量：" + ci.differs.length);
+            for(String strr : ci.differs)
+                System.out.println(strr);
+        }
+        */
+
+        //处理和合并commit
+        ReturnType.commitInfo ci = channel.get(1).commitinfo;
+        //String str = rp.lookCommitFile("aa.txt", ci.commit.hashCode(), taskHash);
+        //System.out.println(str);
+        rp.processTaskCommit(ci.commit.hashCode(), taskHash);//1号合并
+        ci = channel.get(2).commitinfo;
+        rp.processTaskCommit(ci.commit.hashCode(), taskHash);//2号合并
+
+        //Task提交并合并root，文件加入到root后就到了Project文件系统中
+        rp.pushTask(taskHash);
     }
 }
