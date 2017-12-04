@@ -9,7 +9,6 @@ import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 import org.eclipse.jgit.treewalk.TreeWalk;
 import org.eclipse.jgit.treewalk.filter.PathFilter;
 
-import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.OutputStream;
@@ -64,6 +63,8 @@ abstract class Deck {
             ReturnType rt = new ReturnType("commitInfo");
             //填补commit，对于处理过的就不要了
             RevCommit commit = walk.parseCommit(ref.getObjectId());
+
+
             if(commit.getCommitTime() <= time)
                 continue;
             rt.commitinfo.commit = commit;

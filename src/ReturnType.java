@@ -25,6 +25,7 @@ public class ReturnType {
         return commitinfo.commit.getCommitTime();
     }
 
+    //构造时实例化相应类
     ReturnType(String str) {
         if(Objects.equals(str, "forkInfo")) {
             forkinfo = new forkInfo();

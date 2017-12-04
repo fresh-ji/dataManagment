@@ -14,6 +14,6 @@ class TreeNode {
         this.name = name;
         repoPath = null;
         parent = null;
-        childlist = new LinkedList();
+        childlist = new LinkedList<>();
     }
 }

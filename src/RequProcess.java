@@ -12,7 +12,7 @@ public class RequProcess {
     //commit处理时间进度
     private int timeProgress = 0;
 
-    //增接口
+    //增->接口
     int addProject(String projectName) throws Throwable {
         Project pj = new Project();
         TreeNode node = new TreeNode(projectName);
@@ -35,7 +35,7 @@ public class RequProcess {
         return node.hashCode;
     }
 
-    //删接口
+    //删->接口
     int deleteProject(int projectHash) throws Throwable {
         Project pj = new Project();
         TreeNode node = findNode(projectHash);
@@ -55,7 +55,7 @@ public class RequProcess {
         return 1;
     }
 
-    //fork接口
+    //fork->接口
     ReturnType.forkInfo forkProject(String userIden, int projectHash) throws Throwable {
         Project pj = new Project();
         TreeNode node = findNode(projectHash);
@@ -70,7 +70,7 @@ public class RequProcess {
         return fi;
     }
 
-    //列举commit接口，返回的太复杂，可以精简
+    //列举commit->接口，返回的太复杂，可以精简
     List<ReturnType> getProjectCommitChannel(int projectHash) throws Throwable {
         Project pj = new Project();
         TreeNode node = findNode(projectHash);
@@ -83,7 +83,7 @@ public class RequProcess {
         return ta.getCommitChannel(node.repoPath, timeProgress);
     }
 
-    //查看commit中file接口
+    //查看commit中file->接口
     String lookProjectFile(String fileName, int commitHash, int projectHash) throws Throwable {
         Project pj = new Project();
         TreeNode node = findNode(projectHash);
@@ -96,7 +96,7 @@ public class RequProcess {
         return ta.lookFile(fileName, commitHash, node.repoPath);
     }
 
-    //处理commit接口
+    //处理commit->接口
     void processProjectCommit(int commitHash, int projectHash) throws Throwable {
         Project pj = new Project();
         TreeNode node = findNode(projectHash);
@@ -109,7 +109,7 @@ public class RequProcess {
         timeProgress = ta.mergeCargo(commitHash, node.repoPath);
     }
 
-    //只有Task才有的推送，和上一个都是merge过程，返回值应该是boolean
+    //Task向Project推送->接口，只有Task才有，和上一个都是merge过程，返回值应该是boolean
     void pushTask(int taskHash) throws Throwable {
         Task ta = new Task();
         TreeNode node = findNode(taskHash);
