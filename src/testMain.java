@@ -1,5 +1,7 @@
+import com.hd.utils.git.RequProcess;
+import com.hd.utils.git.ResponseType.CommitInfo;
+import com.hd.utils.git.ResponseType.ForkInfo;
 import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.revwalk.RevCommit;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -24,22 +26,23 @@ class test {
 
         int projectHash, taskHash;
 
+        /*
         //添加项目和任务示例
-        RequProcess rp = new RequProcess();
-        projectHash = rp.addProject(project);
+        RequProcess rp = RequProcess.getInstance();
+        rp.addProject(project, 123);
         taskHash = rp.addTask(task1, projectHash);
         //rp.cargoInfo();//打印结构树
 
         //fork任务示例
         //1号用户
-        ReturnType.forkInfo fi1 = rp.forkTask(user1Ident, taskHash);
+        ForkInfo fi1 = rp.forkTask(user1Ident, taskHash);
         Git git1 = Git.cloneRepository()
                 .setBranch(fi1.branchName)
                 .setURI(fi1.repoUri)
                 .setDirectory(new File(user1Dir))
                 .call();
         //2号用户
-        ReturnType.forkInfo fi2 = rp.forkTask(user2Ident, taskHash);
+        ForkInfo fi2 = rp.forkTask(user2Ident, taskHash);
         Git git2 = Git.cloneRepository()
                 .setBranch(fi2.branchName)
                 .setURI(fi2.repoUri)
@@ -89,7 +92,8 @@ class test {
         git2.push().call();
 
         //获取commit通道,相当于概览
-        List<ReturnType> channel = rp.getTaskCommitChannel(taskHash);
+        List<CommitInfo> channel = rp.getTaskCommitChannel(taskHash);
+
         /*
         for (ReturnType rt : channel) {
             ReturnType.commitInfo ci = rt.commitinfo;
@@ -103,15 +107,17 @@ class test {
         }
         */
 
+        /*
         //处理和合并commit
-        ReturnType.commitInfo ci = channel.get(1).commitinfo;
+        CommitInfo ci = channel.get(1);
         //String str = rp.lookCommitFile("aa.txt", ci.commit.hashCode(), taskHash);
         //System.out.println(str);
         rp.processTaskCommit(ci.commit.hashCode(), taskHash);//1号合并
-        ci = channel.get(2).commitinfo;
+        ci = channel.get(2);
         rp.processTaskCommit(ci.commit.hashCode(), taskHash);//2号合并
 
         //Task提交并合并root，文件加入到root后就到了Project文件系统中
         rp.pushTask(taskHash);
+        */
     }
 }
