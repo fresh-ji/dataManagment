@@ -1,4 +1,4 @@
-package com.hd.utils.git.common;
+package com.hd.utils.git.Common;
 
 /**
  * Created by jihang on 2017/12/12.
@@ -20,7 +20,6 @@ public enum ResponseCode {
     public int getCode() {
         return code;
     }
-
     public String getDesc() {
         return desc;
     }

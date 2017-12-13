@@ -1,6 +1,6 @@
-package com.hd.utils.git.POJO;
+package com.hd.utils.git.Pojo;
 
-import com.hd.utils.git.common.ServerResponse;
+import com.hd.utils.git.Common.ServerResponse;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.lib.Ref;
 
@@ -13,7 +13,6 @@ import java.io.File;
 public class Task extends Deck {
 
     @Override
-    //两个库，cargoPath指的是root库路径
     public ServerResponse addCargo(String name, String cargoPath) throws Throwable {
         //建root文件夹
         String rootPath = cargoPath + name;
@@ -53,18 +52,20 @@ public class Task extends Deck {
     //    return 0;
     //}
 
-    public ServerResponse pushTask(String taskPath, String rootPath) throws Throwable {
-        Git git = Git.open(new File(taskPath));
-        git.checkout().setName("master").call();
-        git.add().addFilepattern(".").call();
-        git.commit().setMessage(git.toString() + " commit!!");
-        git.push().call();
 
-        Git rootGit = Git.open(new File(rootPath));
-        rootGit.checkout().setName("master").call();
-        Ref ref = rootGit.getRepository().findRef("master");
-        rootGit.merge().include(ref).call();
+    //public ServerResponse pushTask(String taskPath, String rootPath) throws Throwable {
+    //    Git git = Git.open(new File(taskPath));
+    //    git.checkout().setName("master").call();
+    //    git.add().addFilepattern(".").call();
+    //    git.commit().setMessage(git.toString() + " commit!!");
+    //    git.push().call();
 
-        return ServerResponse.createBySuccess();
-    }
+    //    Git rootGit = Git.open(new File(rootPath));
+    //    rootGit.checkout().setName("master").call();
+    //    Ref ref = rootGit.getRepository().findRef("master");
+    //    rootGit.merge().include(ref).call();
+
+    //    return ServerResponse.createBySuccess();
+    //}
+
 }

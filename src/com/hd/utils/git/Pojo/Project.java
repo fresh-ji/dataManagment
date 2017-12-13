@@ -1,6 +1,6 @@
-package com.hd.utils.git.POJO;
+package com.hd.utils.git.Pojo;
 
-import com.hd.utils.git.common.ServerResponse;
+import com.hd.utils.git.Common.ServerResponse;
 import org.eclipse.jgit.api.Git;
 
 import java.io.File;

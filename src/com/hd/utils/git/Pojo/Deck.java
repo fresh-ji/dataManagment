@@ -1,3 +1,10 @@
+package com.hd.utils.git.Pojo;
+
+import com.hd.utils.git.ResponseType.ChangeInfo;
+import com.hd.utils.git.ResponseType.CommitInfo;
+import com.hd.utils.git.ResponseType.ForkInfo;
+import com.hd.utils.git.Common.ServerResponse;
+
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.Status;
 import org.eclipse.jgit.diff.DiffEntry;
@@ -9,9 +16,7 @@ import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 import org.eclipse.jgit.treewalk.TreeWalk;
 import org.eclipse.jgit.treewalk.filter.PathFilter;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -20,75 +25,90 @@ import java.util.*;
 
 abstract class Deck {
 
-    String projectPath = "mySpace/project/";
-    String taskPath = "mySpace/task/";
+    public final String projectPath = "F:/mySpace/project/";
+    public final String taskPath = "F:/mySpace/task/";
 
-    //在指定cargoPath建立名字为name的Git库
-    abstract int addCargo(String name, String cargoPath) throws Throwable ;
+    /**
+     * 建立名字为name的Git库，路径为cargoPath
+     * @param name 库名
+     * @param cargoPath 文件系统路径，不包括name，对于task来说是root
+     */
+    abstract ServerResponse addCargo(String name, String cargoPath) throws Throwable;
 
     //删除指定cargoPath的Git库
-    abstract int deleteCargo(String cargoPath) throws Throwable;
+    //abstract int deleteCargo(String cargoPath) throws Throwable;
 
-    //为指定userIden生成指定cargoPath的clone路径及分支名
-    ReturnType.forkInfo forkCargo(String userIden, String cargoPath) throws Throwable {
+    /**
+     * @param userIdentify 用户名
+     * @param cargoPath 库路径，与add不同，这是全路径
+     * @return clone路径及分支名
+     */
+    public ServerResponse<ForkInfo> forkCargo(String userIdentify, String cargoPath) throws Throwable {
         Git git = Git.open(new File(cargoPath));
-        //存在则删除重建
-        String branch = userIden + "@" + cargoPath;
-        if(git.getRepository().findRef(branch) != null)
-            git.branchDelete().setBranchNames(branch).call();
+        String branch = userIdentify + "@" + cargoPath;
+        branch = branch.replace(":", "");
+        if(git.getRepository().findRef(branch) != null) {
+            return ServerResponse.createByErrorMessage("branch already exists!");
+        }
         git.checkout().setName("master").call();
         git.branchCreate().setName(branch).call();
 
         git.checkout().setName(branch).call();
-        git.commit().setCommitter(userIden, "email")
+        git.commit().setCommitter(userIdentify, "email")
                 .setMessage("Hi, this is " + branch + "!").call();
-        ReturnType rt = new ReturnType("forkInfo");
-        rt.forkinfo.repoUri = git.getRepository().getDirectory().getCanonicalPath();
-        rt.forkinfo.branchName = git.getRepository().getBranch();
-        return rt.forkinfo;
+
+        ForkInfo fi = new ForkInfo();
+        fi.repoUri = git.getRepository().getDirectory().getCanonicalPath();
+        fi.branchName = git.getRepository().getBranch();
+        return ServerResponse.createBySuccess(fi);
     }
 
-    //按时间顺序返回commit channel，是基于分支的，在Project无分支时用不到
-    List<ReturnType> getCommitChannel(String cargoPath, int time) throws Throwable {
+    /**
+     * 按分支返回管道，每个分支仅返回最新
+     * @param cargoPath 库路径
+     * @return commit管道，最终按时间顺序排列
+     */
+    public ServerResponse<List<CommitInfo>> getCommitChannel(String cargoPath) throws Throwable {
         Git git = Git.open(new File(cargoPath));
         git.checkout().setName("master").call();
         RevWalk walk = new RevWalk(git.getRepository());
 
         List<Ref> refs = git.branchList().call();
-        ArrayList<ReturnType> channel = new ArrayList<>();
+        ArrayList<CommitInfo> channel = new ArrayList<>();
         for(Ref ref : refs) {
             //跳过master分支
             //if(Objects.equals("refs/heads/master", ref.getName()))
             //    continue;
-            ReturnType rt = new ReturnType("commitInfo");
-            //填补commit，对于处理过的就不要了
-            RevCommit commit = walk.parseCommit(ref.getObjectId());
-
-
-            if(commit.getCommitTime() <= time)
-                continue;
-            rt.commitinfo.commit = commit;
+            CommitInfo ci = new CommitInfo();
+            //填补commit
+            ci.commit = walk.parseCommit(ref.getObjectId());;
             //填补differs
             final List<DiffEntry> diffs = git.diff()
                     .setOldTree(prepareTreeParser(git, "master"))
                     .setNewTree(prepareTreeParser(git, ref.getName()))
                     .call();
-            rt.commitinfo.differs = new String[diffs.size()];
+            ci.differs = new String[diffs.size()];
             for(int i=0;i<diffs.size();++i) {
                 DiffEntry diff = diffs.get(i);
-                rt.commitinfo.differs[i] = diff.getChangeType() + ": "
+                ci.differs[i] = diff.getChangeType() + ": "
                         + (diff.getOldPath().equals(diff.getNewPath())
                         ? diff.getNewPath() : diff.getOldPath() + " -> " + diff.getNewPath());
             }
-            channel.add(rt);
+            channel.add(ci);
         }
-        channel.sort(Comparator.comparing(ReturnType::order));
+        channel.sort(Comparator.comparing(CommitInfo::order));
         walk.dispose();
-        return channel;
+        return ServerResponse.createBySuccess(channel);
     }
 
-    //指定cargoPath的指定commit的file
-    String lookFile(String fileName, int commitHash, String cargoPath) throws Throwable {
+    /**
+     * 查看以上channel中的单个文件具体更改情况
+     * @param fileName 文件名
+     * @param commitHash commit
+     * @param cargoPath 库名
+     * @return 该commit中该文件内容
+     */
+    public ServerResponse<ChangeInfo> checkChange(String fileName, int commitHash, String cargoPath) throws Throwable {
         Git git = Git.open(new File(cargoPath));
         RevCommit commit = prepareCommit(git, commitHash);
         RevTree tree = commit.getTree();
@@ -96,23 +116,44 @@ abstract class Deck {
         treeWalk.addTree(tree);
         treeWalk.setRecursive(true);
         treeWalk.setFilter(PathFilter.create(fileName));
-        if (!treeWalk.next())
-            return null;
+        if (!treeWalk.next()) {
+            return ServerResponse.createByErrorMessage(fileName + " not found!");
+        }
+
         ObjectId objectId = treeWalk.getObjectId(0);
         ObjectLoader loader = git.getRepository().open(objectId);
         OutputStream os = new ByteArrayOutputStream();
         loader.copyTo(os);
-        return os.toString();
+
+        ChangeInfo ci = new ChangeInfo();
+        ci.newContent = os.toString();
+
+        File file = new File(cargoPath + "/" + fileName);
+        if(!file.exists()) {
+            ci.oldContent = null;
+        } else {
+            InputStream is = new FileInputStream(file);
+            byte b[] = new byte[(int)file.length()];
+            is.read(b);
+            is.close();
+            ci.oldContent = new String(b);
+        }
+        return ServerResponse.createBySuccess(ci);
     }
 
-    //指定cargoPath的Git库master分支合并指定commit
-    int mergeCargo(int commitHash, String cargoPath) throws Throwable {
+    /**
+     * Git库合并指定commit所属分支
+     * @param commitHash commit
+     * @param cargoPath 库名
+     */
+    public ServerResponse mergeCargoByCommit(int commitHash, String cargoPath) throws Throwable {
         Git git = Git.open(new File(cargoPath));
         RevCommit commit = prepareCommit(git, commitHash);
         git.merge().include(commit).call();
-        return commit.getCommitTime();
+        return ServerResponse.createBySuccess();
     }
 
+    /*
     //查看库状态
     private void statusCargo(Git git) throws Throwable {
         Status status = git.status().call();
@@ -166,7 +207,22 @@ abstract class Deck {
             System.out.println("Untracked Folder: " + untrack);
         }
     }
+    */
+    //根据hash找commit
+    private RevCommit prepareCommit(Git git, int commitHash) throws Throwable {
+        git.checkout().setName("master").call();
+        RevWalk walk = new RevWalk(git.getRepository());
 
+        List<Ref> refs = git.branchList().call();
+        Ref ref0 = git.getRepository().findRef("master");
+        for(Ref ref : refs) {
+            RevCommit commit = walk.parseCommit(ref.getObjectId());
+            if(commit.hashCode() == commitHash){
+                ref0 = ref;
+            }
+        }
+        return walk.parseCommit(ref0.getObjectId());
+    }
     //根据ref建立树
     private AbstractTreeIterator prepareTreeParser(Git git, String ref) throws Throwable {
         Repository repository = git.getRepository();
@@ -180,21 +236,6 @@ abstract class Deck {
         treeParser.reset(reader, tree.getId());
         walk.dispose();
         return treeParser;
-    }
-
-    //根据hash找commit
-    private RevCommit prepareCommit(Git git, int commitHash) throws Throwable {
-        git.checkout().setName("master").call();
-        RevWalk walk = new RevWalk(git.getRepository());
-
-        List<Ref> refs = git.branchList().call();
-        Ref ref0 = git.getRepository().findRef("master");
-        for(Ref ref : refs) {
-            RevCommit commit = walk.parseCommit(ref.getObjectId());
-            if(commit.hashCode() == commitHash)
-                ref0 = ref;
-        }
-        return walk.parseCommit(ref0.getObjectId());
     }
 
 }

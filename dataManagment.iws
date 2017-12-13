@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7db1a591-2f84-48b5-a2f4-268726f7ce3b" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Deck.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Project.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/TreeNode.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/RequProcess.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ForkInfo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/common/ResponseCode.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/common/ServerResponse.java" />
-      <change beforePath="$PROJECT_DIR$/dataManagment.ipr" afterPath="$PROJECT_DIR$/dataManagment.ipr" />
+    <list default="true" id="7db1a591-2f84-48b5-a2f4-268726f7ce3b" name="Default" comment="Update">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/Handle/RequestProcess.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/TreeNode.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ChangeInfo.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/testMain.java" />
       <change beforePath="$PROJECT_DIR$/dataManagment.iws" afterPath="$PROJECT_DIR$/dataManagment.iws" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/Deck.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/Project.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/RequProcess.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/ReturnType$commitInfo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/ReturnType$forkInfo.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/ReturnType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/Task.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/TreeNode.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/test.class" afterPath="$PROJECT_DIR$/out/production/dataManagment/test.class" />
-      <change beforePath="$PROJECT_DIR$/src/ReturnType.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Task.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Task.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/hub/utils/git/POJO/Deck.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/hub/utils/git/POJO/Project.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/hub/utils/git/POJO/TreeNode.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/hub/utils/git/RequProcess.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/testMain.java" afterPath="$PROJECT_DIR$/src/testMain.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/dataManagment/test.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/Deck.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/Project.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/RequProcess.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/TreeNode.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Deck.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Deck.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Project.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Project.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Task.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Task.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/POJO/TreeNode.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/RequProcess.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ForkInfo.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ForkInfo.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/common/ResponseCode.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/Common/ResponseCode.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/hd/utils/git/common/ServerResponse.java" afterPath="$PROJECT_DIR$/src/com/hd/utils/git/Common/ServerResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/testMain.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,10 +40,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="testMain.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/testMain.java">
+        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/testMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="2576">
+              <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,97 +51,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/Deck.java">
+      <file leaf-file-name="RequestProcess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Handle/RequestProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            <state relative-caret-position="2116">
+              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="class#lazyHolder#0;class#RequestProcess#0" expanded="false" />
+                <element signature="method#RequestProcess#0;class#RequestProcess#0" expanded="false" />
+                <element signature="method#addProject#0;class#RequestProcess#0" expanded="false" />
+                <element signature="method#addTask#0;class#RequestProcess#0" expanded="false" />
+                <element signature="method#forkTask#0;class#RequestProcess#0" expanded="false" />
+                <element signature="method#getTaskCommitChannel#0;class#RequestProcess#0" expanded="false" />
+                <element signature="method#processTaskCommit#0;class#RequestProcess#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/Task.java">
+      <file leaf-file-name="Deck.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Deck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="227">
+              <caret line="140" column="27" lean-forward="false" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="docComment;method#addCargo#0;class#Deck#0" expanded="false" />
+                <element signature="docComment;method#forkCargo#0;class#Deck#0" expanded="false" />
+                <element signature="method#forkCargo#0;class#Deck#0" expanded="false" />
+                <element signature="docComment;method#getCommitChannel#0;class#Deck#0" expanded="false" />
+                <element signature="method#prepareCommit#0;class#Deck#0" expanded="false" />
+                <element signature="method#prepareTreeParser#0;class#Deck#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreeNode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/TreeNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommitInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForkInfo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ForkInfo.java">
+      <file leaf-file-name="ChangeInfo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ChangeInfo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequProcess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/RequProcess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseCode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/common/ResponseCode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerResponse.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/common/ServerResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -176,6 +121,7 @@
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\jihang\Desktop\MY\dataManagment\src\com\hub\utils\git</dir>
+      <dir>C:\Users\jihang\Desktop\MY\dataManagment\src\com\hd\utils\git\common</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -221,16 +167,24 @@
         <option value="$PROJECT_DIR$/src/com/hub/utils/git/POJO/Task.java" />
         <option value="$PROJECT_DIR$/src/com/hub/utils/git/POJO/Deck.java" />
         <option value="$PROJECT_DIR$/src/com/hub/utils/git/RequProcess.java" />
-        <option value="$PROJECT_DIR$/src/com/hd/utils/git/common/ResponseCode.java" />
         <option value="$PROJECT_DIR$/src/com/hd/utils/git/common/ServerResponse.java" />
         <option value="$PROJECT_DIR$/src/com/hd/utils/git/POJO/TreeNode.java" />
-        <option value="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ForkInfo.java" />
         <option value="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Task.java" />
         <option value="$PROJECT_DIR$/src/com/hd/utils/git/RequProcess.java" />
         <option value="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Project.java" />
-        <option value="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Deck.java" />
         <option value="$PROJECT_DIR$/src/testMain.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/common/ResponseCode.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/POJO/Deck.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/Handle/RequProcess.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ForkInfo.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Project.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/TreeNode.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Task.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ChangeInfo.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/Handle/RequestProcess.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/testMain.java" />
+        <option value="$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Deck.java" />
       </list>
     </option>
   </component>
@@ -263,6 +217,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,37 +242,21 @@
               <item name="dataManagment" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="git" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dataManagment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dataManagment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="git" type="462c0819:PsiDirectoryNode" />
-              <item name="POJO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dataManagment" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dataManagment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="git" type="462c0819:PsiDirectoryNode" />
-              <item name="ResponseType" type="462c0819:PsiDirectoryNode" />
+              <item name="testMain.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/jar/json-20140107.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../benchhub-security" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1556391" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -363,7 +303,7 @@
     </configuration>
     <configuration name="test" type="Application" factoryName="Application" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="com.hd.utils.git.test" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -769,16 +709,26 @@
       <workItem from="1512974939627" duration="11087000" />
       <workItem from="1513038956375" duration="15413000" />
       <workItem from="1513066755918" duration="156000" />
-      <workItem from="1513069501907" duration="61000" />
+      <workItem from="1513069501907" duration="5253000" />
+      <workItem from="1513125441193" duration="18668000" />
+      <workItem from="1513155063681" duration="1000" />
+      <workItem from="1513155764722" duration="678000" />
     </task>
+    <task id="LOCAL-00001" summary="Update">
+      <created>1513069588848</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1513069588848</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284456000" />
+    <option name="totallyTimeSpent" value="308995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -788,18 +738,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26961327" sideWeight="0.27640265" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20318726" sideWeight="0.72359735" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05482456" sideWeight="0.72359735" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16130953" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994062" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4063745" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4053156" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -810,7 +760,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32545933" sideWeight="0.75" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -819,9 +769,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="45" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -834,8 +788,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/dmGit.java" />
-    <entry file="file://$PROJECT_DIR$/src/testMain.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/testMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
@@ -846,7 +799,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dmGit.java" />
-    <entry file="file://$PROJECT_DIR$/src/testMain.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/testMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
@@ -939,13 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/api/Git.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/s.java" />
     <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/revwalk/RevBlob.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -987,92 +933,27 @@
     <entry file="file://$PROJECT_DIR$/src/com/hub/utils/git/ResponseType/ForkInfo.java" />
     <entry file="file://$PROJECT_DIR$/src/com/hub/utils/git/POJO/TreeNode.java" />
     <entry file="file://$PROJECT_DIR$/src/com/hub/utils/git/common/ServerResponse.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/Deck.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Deck.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3105">
           <caret line="135" column="70" lean-forward="true" selection-start-line="135" selection-start-column="70" selection-end-line="135" selection-end-column="70" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#addCargo#0;class#Deck#0" expanded="false" />
+            <element signature="docComment;method#forkCargo#0;class#Deck#0" expanded="false" />
+            <element signature="method#forkCargo#0;class#Deck#0" expanded="false" />
+            <element signature="docComment;method#getCommitChannel#0;class#Deck#0" expanded="false" />
+            <element signature="method#prepareCommit#0;class#Deck#0" expanded="false" />
+            <element signature="method#prepareTreeParser#0;class#Deck#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hub/utils/git/RequProcess.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/common/ServerResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Common/ResponseCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/POJO/Deck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/common/ResponseCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/RequProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="322">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1080,6 +961,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Pojo/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Common/ServerResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/jar/org.eclipse.jgit-4.9.0.201710071750-r.jar!/org/eclipse/jgit/api/Git.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1591">
+          <caret line="112" column="31" lean-forward="false" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="65" column="46" lean-forward="true" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/CommitInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/testMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2576">
+          <caret line="123" column="8" lean-forward="false" selection-start-line="123" selection-start-column="8" selection-end-line="123" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Handle/RequestProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2116">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#lazyHolder#0;class#RequestProcess#0" expanded="false" />
+            <element signature="method#RequestProcess#0;class#RequestProcess#0" expanded="false" />
+            <element signature="method#addProject#0;class#RequestProcess#0" expanded="false" />
+            <element signature="method#addTask#0;class#RequestProcess#0" expanded="false" />
+            <element signature="method#forkTask#0;class#RequestProcess#0" expanded="false" />
+            <element signature="method#getTaskCommitChannel#0;class#RequestProcess#0" expanded="false" />
+            <element signature="method#processTaskCommit#0;class#RequestProcess#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/Pojo/Deck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="140" column="27" lean-forward="false" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#addCargo#0;class#Deck#0" expanded="false" />
+            <element signature="docComment;method#forkCargo#0;class#Deck#0" expanded="false" />
+            <element signature="method#forkCargo#0;class#Deck#0" expanded="false" />
+            <element signature="docComment;method#getCommitChannel#0;class#Deck#0" expanded="false" />
+            <element signature="method#prepareCommit#0;class#Deck#0" expanded="false" />
+            <element signature="method#prepareTreeParser#0;class#Deck#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hd/utils/git/ResponseType/ChangeInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding />
         </state>
       </provider>

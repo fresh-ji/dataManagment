@@ -1,4 +1,4 @@
-package com.hd.utils.git.common;
+package com.hd.utils.git.Common;
 
 import java.io.Serializable;
 
