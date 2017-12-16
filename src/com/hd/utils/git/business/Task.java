@@ -1,16 +1,17 @@
-package com.hd.utils.git.Pojo;
+package com.hd.utils.git.business;
 
-import com.hd.utils.git.Common.ServerResponse;
+import com.hd.utils.git.common.ServerResponse;
 import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.lib.Ref;
 
 import java.io.File;
 
 /**
- * Created by jihang on 2017/11/21.
+ * 任务类
+ * @author jihang
+ * @date 2017/11/21
  */
 
-public class Task extends Deck {
+public class Task extends AbstractDeck {
 
     @Override
     public ServerResponse addCargo(String name, String cargoPath) throws Throwable {
@@ -47,7 +48,7 @@ public class Task extends Deck {
     }
 
     //@Override
-    //public int deleteCargo(String cargoPath) throws Throwable {
+    //public Integer deleteCargo(String cargoPath) throws Throwable {
     //    System.out.println("here delete task");
     //    return 0;
     //}

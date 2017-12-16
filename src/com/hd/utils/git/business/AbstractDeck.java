@@ -1,13 +1,15 @@
-package com.hd.utils.git.Pojo;
+package com.hd.utils.git.business;
 
-import com.hd.utils.git.ResponseType.ChangeInfo;
-import com.hd.utils.git.ResponseType.CommitInfo;
-import com.hd.utils.git.ResponseType.ForkInfo;
-import com.hd.utils.git.Common.ServerResponse;
+import com.hd.utils.git.responsetype.ChangeInfo;
+import com.hd.utils.git.responsetype.CommitInfo;
+import com.hd.utils.git.responsetype.ForkInfo;
+import com.hd.utils.git.common.ServerResponse;
 
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.Status;
 import org.eclipse.jgit.diff.DiffEntry;
+import org.eclipse.jgit.diff.DiffFormatter;
+import org.eclipse.jgit.diff.RawTextComparator;
 import org.eclipse.jgit.lib.*;
 import org.eclipse.jgit.lib.IndexDiff.StageState;
 import org.eclipse.jgit.revwalk.*;
@@ -23,7 +25,7 @@ import java.util.*;
  * Created by jihang on 2017/11/21.
  */
 
-abstract class Deck {
+abstract class AbstractDeck {
 
     public final String projectPath = "F:/mySpace/project/";
     public final String taskPath = "F:/mySpace/task/";
@@ -36,7 +38,7 @@ abstract class Deck {
     abstract ServerResponse addCargo(String name, String cargoPath) throws Throwable;
 
     //删除指定cargoPath的Git库
-    //abstract int deleteCargo(String cargoPath) throws Throwable;
+    //abstract Integer deleteCargo(String cargoPath) throws Throwable;
 
     /**
      * @param userIdentify 用户名
@@ -81,15 +83,25 @@ abstract class Deck {
             //    continue;
             CommitInfo ci = new CommitInfo();
             //填补commit
-            ci.commit = walk.parseCommit(ref.getObjectId());;
+            ci.commit = walk.parseCommit(ref.getObjectId());
             //填补differs
             final List<DiffEntry> diffs = git.diff()
                     .setOldTree(prepareTreeParser(git, "master"))
                     .setNewTree(prepareTreeParser(git, ref.getName()))
                     .call();
             ci.differs = new String[diffs.size()];
-            for(int i=0;i<diffs.size();++i) {
+            for(Integer i=0;i<diffs.size();++i) {
                 DiffEntry diff = diffs.get(i);
+                /*
+                //具体显示该diff
+                ByteArrayOutputStream out = new ByteArrayOutputStream();
+                DiffFormatter df = new DiffFormatter(out);
+                df.setDiffComparator(RawTextComparator.WS_IGNORE_ALL);
+                df.setRepository(git.getRepository());
+                df.format(diff);
+                String diffText = out.toString("UTF-8");
+                System.out.println(diffText);
+                */
                 ci.differs[i] = diff.getChangeType() + ": "
                         + (diff.getOldPath().equals(diff.getNewPath())
                         ? diff.getNewPath() : diff.getOldPath() + " -> " + diff.getNewPath());
@@ -108,7 +120,7 @@ abstract class Deck {
      * @param cargoPath 库名
      * @return 该commit中该文件内容
      */
-    public ServerResponse<ChangeInfo> checkChange(String fileName, int commitHash, String cargoPath) throws Throwable {
+    public ServerResponse<ChangeInfo> checkChange(String fileName, Integer commitHash, String cargoPath) throws Throwable {
         Git git = Git.open(new File(cargoPath));
         RevCommit commit = prepareCommit(git, commitHash);
         RevTree tree = commit.getTree();
@@ -146,15 +158,17 @@ abstract class Deck {
      * @param commitHash commit
      * @param cargoPath 库名
      */
-    public ServerResponse mergeCargoByCommit(int commitHash, String cargoPath) throws Throwable {
+    public ServerResponse mergeCargoByCommit(Integer commitHash, String cargoPath) throws Throwable {
         Git git = Git.open(new File(cargoPath));
         RevCommit commit = prepareCommit(git, commitHash);
         git.merge().include(commit).call();
         return ServerResponse.createBySuccess();
     }
 
-    /*
-    //查看库状态
+    /**
+     * 查看库状态
+     * @param git 库
+     */
     private void statusCargo(Git git) throws Throwable {
         Status status = git.status().call();
         Set<String> conflicting = status.getConflicting();
@@ -207,9 +221,14 @@ abstract class Deck {
             System.out.println("Untracked Folder: " + untrack);
         }
     }
-    */
-    //根据hash找commit
-    private RevCommit prepareCommit(Git git, int commitHash) throws Throwable {
+
+    /**
+     * 根据hash找commit
+     * @param git 库
+     * @param commitHash commit的hash指
+     * @return RevCommit
+     */
+    private RevCommit prepareCommit(Git git, Integer commitHash) throws Throwable {
         git.checkout().setName("master").call();
         RevWalk walk = new RevWalk(git.getRepository());
 
@@ -223,12 +242,18 @@ abstract class Deck {
         }
         return walk.parseCommit(ref0.getObjectId());
     }
-    //根据ref建立树
+
+    /**
+     * 根据ref建立树
+     * @param git 库
+     * @param ref 关键字
+     * @return 抽象树指针
+     */
     private AbstractTreeIterator prepareTreeParser(Git git, String ref) throws Throwable {
         Repository repository = git.getRepository();
         RevWalk walk = new RevWalk(repository);
-        Ref REF = repository.findRef(ref);
-        RevCommit commit = walk.parseCommit(REF.getObjectId());
+        Ref rEF = repository.findRef(ref);
+        RevCommit commit = walk.parseCommit(rEF.getObjectId());
         //把commit walk成树
         RevTree tree = walk.parseTree(commit.getTree().getId());
         CanonicalTreeParser treeParser = new CanonicalTreeParser();

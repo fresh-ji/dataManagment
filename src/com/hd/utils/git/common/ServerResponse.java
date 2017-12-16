@@ -1,29 +1,31 @@
-package com.hd.utils.git.Common;
+package com.hd.utils.git.common;
 
 import java.io.Serializable;
 
 /**
- * Created by jihang on 2017/12/12.
+ * 通用返回类
+ * @author jihang
+ * @date 2017/12/12
  */
 
 public class ServerResponse<T> implements Serializable {
 
-    private int status;
+    private Integer status;
     private String msg;
     private T data;
 
-    private ServerResponse(int status) {
+    private ServerResponse(Integer status) {
         this.status = status;
     }
-    private ServerResponse(int status, String msg) {
+    private ServerResponse(Integer status, String msg) {
         this.status = status;
         this.msg = msg;
     }
-    private ServerResponse(int status, T data) {
+    private ServerResponse(Integer status, T data) {
         this.status = status;
         this.data = data;
     }
-    private ServerResponse(int status, String msg, T data) {
+    private ServerResponse(Integer status, String msg, T data) {
         this.status = status;
         this.msg = msg;
         this.data = data;
@@ -33,7 +35,7 @@ public class ServerResponse<T> implements Serializable {
         return this.status == ResponseCode.SUCCESS.getCode();
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
     public String getMsg() {
@@ -62,7 +64,7 @@ public class ServerResponse<T> implements Serializable {
     public static <T> ServerResponse<T> createByErrorMessage(String errorMessage) {
         return new ServerResponse<T>(ResponseCode.ERROR.getCode(), errorMessage);
     }
-    public static <T> ServerResponse<T> createByErrorCodeMessage(int errorCode, String errorMessage) {
+    public static <T> ServerResponse<T> createByErrorCodeMessage(Integer errorCode, String errorMessage) {
         return new ServerResponse<T>(errorCode, errorMessage);
     }
 
